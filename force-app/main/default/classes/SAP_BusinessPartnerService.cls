@@ -5,7 +5,7 @@ public with sharing class SAP_BusinessPartnerService {
     public class BusinessPartnerDTO {
         @AuraEnabled public String sapId;
         @AuraEnabled public String fullName;
-        @AuraEnabled public String BPGroup;
+        @AuraEnabled public String bpGroup;
         @AuraEnabled public String createdBy;
     }
 
@@ -55,7 +55,7 @@ public with sharing class SAP_BusinessPartnerService {
         BusinessPartnerDTO dto = new BusinessPartnerDTO();
         dto.sapId = props.BusinessPartner;
         dto.fullName = props.BusinessPartnerFullName;
-        dto.BPGroup = props.BusinessPartnerGrouping;
+        dto.bpGroup = props.BusinessPartnerGrouping;
         dto.createdBy = props.CreatedByUser;
         
         return dto;

@@ -18,8 +18,8 @@ public with sharing class SAP_BusinessPartnerService {
         HttpRequest request = new HttpRequest();
         
         // Usamos a Named Credential para segurança e o filtro OData para performance
-        String endpoint = 'callout:SAP_S4HANA_Sandbox/A_BusinessPartner';
-        endpoint += '(\'' + partnerId + '\')'; // Sintaxe OData para buscar por ID
+        String encodedId = EncodingUtil.urlEncode(partnerId, 'UTF-8');
+        String endpoint = 'callout:SAPS4HANASandbox/A_BusinessPartner(\'' + encodedId + '\')';
         
         request.setEndpoint(endpoint);
         request.setMethod('GET');
